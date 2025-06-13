@@ -1,6 +1,6 @@
-import { FlatList, ScrollView, Text, View } from "react-native";
-import Header from "../components/Header";
-import InputSearch from "../components/InputSearch";
+import Header from "@/components/Header";
+import InputSearch from "@/components/InputSearch";
+import { FlatList, Text, View } from "react-native";
 import CoffeeCard from "../components/Cards/CoffeeCard";
 
 const coffee = [
@@ -28,40 +28,47 @@ const coffee = [
 ];
 const Screen = () => {
   return (
-    <ScrollView>
-      <Header
-        text={{
-          title: "Bom dia, Everson",
-          subtitle: "Que tal pedir um café hoje?",
-        }}
-      >
-        <View className="absolute -bottom-7">
-          <InputSearch
-            sendData={(search: string) => {
-              alert(search);
+    <FlatList
+      showsHorizontalScrollIndicator={false}
+      data={coffee}
+      className=""
+      renderItem={() => <CoffeeCard isSmall={false}></CoffeeCard>}
+      keyExtractor={(item) => item.id.toString()}
+      ListHeaderComponent={() => (
+        <>
+          <Header
+            text={{
+              title: "Bom dia, Everson",
+              subtitle: "Que tal pedir um café hoje?",
             }}
-          ></InputSearch>
-        </View>
-      </Header>
-      <View className="mt-16">
-        <Text className="ml-6 text-2xl font-extrabold text-primary mb-2">
-          Novos cafés
-        </Text>
-        <FlatList
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          className=""
-          data={coffee}
-          renderItem={() => <CoffeeCard></CoffeeCard>}
-          keyExtractor={(item) => item.id.toString()}
-        ></FlatList>
-      </View>
-      <View className="mt-11">
-        <Text className="ml-6 text-2xl font-extrabold text-primary mb-2">
-          Frequentemente pedidos
-        </Text>
-      </View>
-    </ScrollView>
+          >
+            <View className="absolute -bottom-7">
+              <InputSearch
+                sendData={(search: string) => {
+                  alert(search);
+                }}
+              ></InputSearch>
+            </View>
+          </Header>
+          <View className="mt-16">
+            <Text className="ml-6 text-2xl font-extrabold text-primary mb-2">
+              Novos cafés
+            </Text>
+            <FlatList
+              horizontal
+              data={coffee}
+              keyExtractor={(item) => item.id.toString()}
+              renderItem={({ item }) => <CoffeeCard isSmall={true} />}
+              showsHorizontalScrollIndicator={false}
+            />
+          </View>
+
+          <Text className="ml-6 text-2xl font-extrabold text-primary mb-2 mt-11">
+            Frequentemente pedidos
+          </Text>
+        </>
+      )}
+    ></FlatList>
   );
 };
 
