@@ -31,7 +31,9 @@ const Screen = () => {
     <FlatList
       showsHorizontalScrollIndicator={false}
       data={coffee}
-      className=""
+      ListFooterComponent={() => {
+        return <View className="h-24"></View>;
+      }}
       renderItem={() => <CoffeeCard isSmall={false}></CoffeeCard>}
       keyExtractor={(item) => item.id.toString()}
       ListHeaderComponent={() => (

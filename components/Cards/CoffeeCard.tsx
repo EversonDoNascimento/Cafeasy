@@ -25,12 +25,12 @@ const CoffeeCard: React.FC<Props> = ({ isSmall }) => {
       ></Image>
       <View
         className={clsx("gap-4", {
-          " justify-between  flex-1 h-32": !isSmall,
+          " justify-between  flex-1 h-full gap-0 ": !isSmall,
         })}
       >
         <View
           className={clsx("w-full ml-4", {
-            "mt-5 ml-3": !isSmall,
+            "mt-4 ml-3": !isSmall,
           })}
         >
           <Text

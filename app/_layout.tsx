@@ -5,7 +5,10 @@ import "./../global.css";
 const RootLayout = () => {
   return (
     <StepAuthContextProvider>
-      <StatusBar barStyle="light-content"></StatusBar>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+      ></StatusBar>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)/login" options={{ headerShown: false }} />
