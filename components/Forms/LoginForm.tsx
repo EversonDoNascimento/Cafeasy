@@ -1,11 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
-import { LoginSchema, LoginSchemaType } from "../../zod/loginSchema";
-import { Text, View } from "react-native";
-import Input from "../Input";
-import { SubmitButton } from "../SubmitButton";
-import ShowErrorField from "../ShowErrorField";
 import { useRouter } from "expo-router";
+import { Controller, useForm } from "react-hook-form";
+import { Text, View } from "react-native";
+import { LoginSchema, LoginSchemaType } from "../../zod/loginSchema";
+import Input from "../Input";
+import ShowErrorField from "../ShowErrorField";
+import { SubmitButton } from "../SubmitButton";
 
 export const LoginForm = () => {
   const router = useRouter();
@@ -65,7 +65,7 @@ export const LoginForm = () => {
 
       <SubmitButton
         onPress={() => {
-          router.push("/home");
+          router.push("/(app)");
         }}
         text="Entrar"
       ></SubmitButton>
