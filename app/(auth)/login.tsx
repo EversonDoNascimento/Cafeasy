@@ -1,6 +1,5 @@
-import { Pressable, Text, View } from "react-native";
-import { useStepAuthContext } from "../../contexts/stepAuthContext";
 import { useEffect } from "react";
+import { Pressable, Text, View, useWindowDimensions } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -8,18 +7,18 @@ import Animated, {
 } from "react-native-reanimated";
 import { LoginForm } from "../../components/Forms/LoginForm";
 import RegisterForm from "../../components/Forms/RegisterForm";
-import { useWindowDimensions } from "react-native";
 import Header from "../../components/Header";
+import { useStepAuthContext } from "../../contexts/stepAuthContext";
 
 const Screen = () => {
   const { width: FORM_OFFSET } = useWindowDimensions();
   const ctxStepAuth = useStepAuthContext();
-  const posX = useSharedValue(ctxStepAuth.step == "LOGIN" ? 175 : 0);
+  const posX = useSharedValue(ctxStepAuth.step === "LOGIN" ? 175 : 0);
   const posXForm = useSharedValue(0);
 
   useEffect(() => {
     (() => {
-      if (ctxStepAuth.step == "LOGIN") {
+      if (ctxStepAuth.step === "LOGIN") {
         posX.value = withTiming(0, {
           duration: 200,
         });
@@ -35,7 +34,7 @@ const Screen = () => {
         });
       }
     })();
-  }, [ctxStepAuth.step]);
+  }, [ctxStepAuth.step, FORM_OFFSET, posX, posXForm]);
 
   const animationStyles = useAnimatedStyle(() => ({
     transform: [{ translateX: posX.value }],
@@ -48,7 +47,7 @@ const Screen = () => {
     <View className="w-full h-full ">
       <Header
         text={
-          ctxStepAuth.step == "LOGIN"
+          ctxStepAuth.step === "LOGIN"
             ? { title: "Entre na sua conta" }
             : { title: "Cadastre-se para ter acesso" }
         }
@@ -67,7 +66,7 @@ const Screen = () => {
           >
             <Text
               className={`${
-                ctxStepAuth.step == "LOGIN" ? "text-white" : "text-text"
+                ctxStepAuth.step === "LOGIN" ? "text-white" : "text-text"
               }  text-center text-xl font-bold`}
             >
               Entrar
@@ -79,7 +78,7 @@ const Screen = () => {
           >
             <Text
               className={`${
-                ctxStepAuth.step == "REGISTER" ? "text-white" : "text-text"
+                ctxStepAuth.step === "REGISTER" ? "text-white" : "text-text"
               }  text-center text-xl font-bold`}
             >
               Cadastrar-se

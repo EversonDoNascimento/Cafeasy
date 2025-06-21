@@ -1,18 +1,16 @@
 import { Stack } from "expo-router";
-import { StatusBar } from "react-native";
 import { StepAuthContextProvider } from "../contexts/stepAuthContext";
 import "./../global.css";
 const RootLayout = () => {
   return (
     <StepAuthContextProvider>
-      <StatusBar
+      {/* <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
-      ></StatusBar>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="(auth)/login" options={{ headerShown: false }} />
-        <Stack.Screen name="home" options={{ headerShown: false }} />
+      ></StatusBar> */}
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="(auth)/login" />
       </Stack>
     </StepAuthContextProvider>
   );
