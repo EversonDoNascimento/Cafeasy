@@ -20,7 +20,7 @@ const CoffeeCard: React.FC<Props> = ({ isSmall }) => {
           uri: "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         }}
         className={clsx("w-40 h-36 rounded-3xl mt-2", {
-          "mt-0 w-32 h-32": !isSmall,
+          "mt-[0] w-32 h-full": !isSmall,
         })}
       ></Image>
       <View
