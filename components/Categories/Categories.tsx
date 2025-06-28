@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FlatList, Text, View } from "react-native";
 import CardCategory from "./CardCategory";
 
@@ -24,9 +24,15 @@ const categories = [
     icon: "coffee",
   },
 ];
-const Categories = () => {
-  const [activatedCategory, setActivatedCategory] = useState(1);
 
+type Props = {
+  sendChoice: (id: number) => void;
+};
+const Categories = ({ sendChoice }: Props) => {
+  const [activatedCategory, setActivatedCategory] = useState(1);
+  useEffect(() => {
+    sendChoice(activatedCategory);
+  }, [activatedCategory, sendChoice]);
   return (
     <View className="mt-16 ml-8">
       <Text className="font-bold text-xl">Categorias</Text>

@@ -20,7 +20,11 @@ const Menu = () => {
           ></InputSearch>
         </View>
       </Header>
-      <Categories></Categories>
+      <Categories
+        sendChoice={(id: number) => {
+          alert(id);
+        }}
+      ></Categories>
     </>
   );
 };
