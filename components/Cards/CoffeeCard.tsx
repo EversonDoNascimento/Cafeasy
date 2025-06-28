@@ -3,13 +3,15 @@ import clsx from "clsx";
 import { Image, Pressable, Text, View } from "react-native";
 type Props = {
   isSmall: boolean;
+  isFavorite?: boolean;
+  isMenu?: boolean;
 };
-const CoffeeCard: React.FC<Props> = ({ isSmall }) => {
+const CoffeeCard: React.FC<Props> = ({ isSmall, isFavorite, isMenu }) => {
   return (
     <Pressable
       style={{ elevation: 1 }}
       className={clsx(
-        "my-2  w-48 justify-center items-center rounded-3xl  gap-2 mx-3 bg-white",
+        "my-2 relative  w-48 justify-center items-center rounded-3xl  gap-2 mx-3 bg-white",
         {
           "w-[90%] mx-auto flex-row h-32 ": !isSmall,
         }
@@ -23,6 +25,15 @@ const CoffeeCard: React.FC<Props> = ({ isSmall }) => {
           "mt-[0] w-32 h-full": !isSmall,
         })}
       ></Image>
+      {isMenu && (
+        <Pressable className="absolute items-center justify-center bg-accent w-11 h-11 right-4 rounded-full">
+          {isFavorite ? (
+            <FontAwesome name="heart" size={24} color="white" />
+          ) : (
+            <FontAwesome name="heart-o" size={24} color="white" />
+          )}
+        </Pressable>
+      )}
       <View
         className={clsx("gap-4", {
           " justify-between  flex-1 h-full gap-0 ": !isSmall,
