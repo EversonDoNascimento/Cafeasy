@@ -1,6 +1,6 @@
-import Animated, { FadeInUp } from "react-native-reanimated";
-import { Image, Text, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import { Image, Text, View } from "react-native";
+import Animated, { FadeInUp } from "react-native-reanimated";
 
 type Props = {
   text: {
@@ -34,7 +34,9 @@ const Header = ({ text, children }: Props) => {
       <View className="justify-between items-center mt-4 px-8 flex-row">
         <View className="flex-1 ">
           <Text className="text-white text-2xl">{text.title}</Text>
-          <Text className="text-white/50 text-lg">{text.subtitle}</Text>
+          {text.subtitle !== "" && (
+            <Text className="text-white/50 text-lg">{text.subtitle}</Text>
+          )}
         </View>
         <View className=" ">
           <FontAwesome name="bell" size={30} color="white" />
