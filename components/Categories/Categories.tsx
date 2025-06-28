@@ -34,13 +34,15 @@ const Categories = ({ sendChoice }: Props) => {
     sendChoice(activatedCategory);
   }, [activatedCategory, sendChoice]);
   return (
-    <View className="mt-16 ml-8">
-      <Text className="font-bold text-xl">Categorias</Text>
+    <View className="mt-11 mb-4">
+      <Text className="font-bold text-xl  ml-4">Categorias</Text>
       <FlatList
         horizontal
         data={categories}
+        ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id.toString()}
+        style={{ paddingHorizontal: 11 }}
         renderItem={({ item, index }) => (
           <CardCategory
             activated={activatedCategory}

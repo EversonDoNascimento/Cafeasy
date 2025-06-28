@@ -52,12 +52,12 @@ const CardCategory = ({
         },
         animatedStyle,
       ]}
-      className={clsx(" ml-2 mt-2 rounded-full  p-1  ", {
+      className={clsx("  mt-2 rounded-full  py-1 pl-1 pr-5 ", {
         "mr-11": isEnd,
       })}
     >
       <Pressable
-        className="flex-row justify-center items-center gap-1"
+        className="flex-row justify-center items-center gap-2"
         onPress={() => setActivatedCategory(id)}
       >
         <View className="w-11 h-11 justify-center items-center rounded-full bg-white">
