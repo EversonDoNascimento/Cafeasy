@@ -1,50 +1,69 @@
-# Welcome to your Expo app 👋
+# ☕ CafEasy
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+CafEasy é um aplicativo mobile de venda de café, desenvolvido com React Native e TypeScript. A proposta é permitir que o usuário personalize seu café, adicione aos favoritos, explore o cardápio e finalize pedidos de forma simples e intuitiva.
 
-## Get started
+---
 
-1. Install dependencies
+## 📱 Funcionalidades
 
-   ```bash
-   npm install
-   ```
+- Montagem personalizada de cafés
+- Visualização de cardápio
+- Adição de itens ao carrinho
+- Lista de cafés favoritos
+- Finalização de pedidos
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 🛠 Tecnologias e Bibliotecas
 
-In the output, you'll find options to open the app in a
+- **React Native** com **Expo**
+- **TypeScript**
+- **React Hook Form** + **Zod** (validações de formulário)
+- **NativeWind** (estilização com Tailwind CSS adaptado)
+- **FontAwesome** (ícones)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🚀 Instalação
 
-## Get a fresh project
-
-When you're ready, run:
+> Pré-requisitos: Node.js, Expo CLI, npm ou yarn instalados.
 
 ```bash
-npm run reset-project
+# Clone o repositório
+git clone https://github.com/EversonDoNascimento/Cafeasy.git
+
+# Acesse a pasta do projeto
+cd Cafeasy
+
+# Instale as dependências
+npm install
+# ou
+yarn install
+
+# Inicie o servidor de desenvolvimento
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+O Expo abrirá um QR code que pode ser escaneado com o app Expo Go para rodar no celular.
 
-## Learn more
+## 📸 APP (Em desenvolvimento)
 
-To learn more about developing your project with Expo, look at the following resources:
+![Tela inicial](/assets/screens/initial.png)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+![Tela de login](/assets/screens/login.png)
 
-## Join the community
+![Tela home](/assets/screens/home.png)
 
-Join our community of developers creating universal apps.
+![Tela de menu](/assets/screens/menu.png)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+![Tela de visualização do café](/assets/screens/coffee.png)
+
+## ⚠️ Aviso
+
+Este projeto foi criado com o objetivo de praticar e demonstrar conhecimentos em **React Native**.  
+O design utilizado como base foi encontrado no [Pinterest](https://br.pinterest.com/pin/488429522106843295/), e todos os direitos visuais pertencem ao autor original.  
+**Não há intenção comercial** nem monetização deste app — trata-se apenas de um projeto para fins **educacionais** e **de portfólio**.
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
