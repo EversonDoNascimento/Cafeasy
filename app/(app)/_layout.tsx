@@ -66,6 +66,10 @@ const AppLayout = () => {
           ),
         }}
       ></Tabs.Screen>
+      <Tabs.Screen
+        name="drink/[id]"
+        options={{ tabBarIcon: () => null, href: null }}
+      />
     </Tabs>
   );
 };
