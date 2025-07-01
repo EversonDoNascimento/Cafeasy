@@ -1,5 +1,6 @@
 import { FontAwesome } from "@expo/vector-icons";
 import clsx from "clsx";
+import { useRouter } from "expo-router";
 import { Image, Pressable, Text, View } from "react-native";
 type Props = {
   isSmall: boolean;
@@ -7,8 +8,12 @@ type Props = {
   isMenu?: boolean;
 };
 const CoffeeCard: React.FC<Props> = ({ isSmall, isFavorite, isMenu }) => {
+  const router = useRouter();
   return (
     <Pressable
+      onPress={() =>
+        router.push({ pathname: "/drink/[id]", params: { id: 1 } })
+      }
       style={{ elevation: 1 }}
       className={clsx(
         "my-2 relative  w-48 justify-center items-center rounded-3xl  gap-2 mx-3 bg-white",
